@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="icon" href="" type="image/x-icon" />
+    <title>Curriculum Vitae</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            background-color: lightblue;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            position: relative;
+            width: 100%;
+            max-width: 1000px;
+            min-height: 1000px;
+            margin: 50px;
+            background: #fff;
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            box-shadow: 0 35px 55px rgba(0, 0, 0, 0, 1);
+        }
+
+        .container .left_side {
+            position: relative;
+            background-color: #0e1d30;
+            color: #e4e4e6;
+            padding: 40px 0;
+        }
+
+        .profileText {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-bottom: 20px;
+        }
+
+        .container .right_side {
+            position: relative;
+            background-color: #e4e4e6;
+            padding: 40px;
+        }
+
+        .haxegon {
+            position: relative;
+            width: 170px;
+            height: 196px;
+            background-color: #fff;
+            color: white;
+            clip-path: polygon(50% 0%, 100% 25%, 100% 75%,
+                    50% 100%, 0% 75%, 0% 25%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .sub-haxegon {
+            position: relative;
+            width: 166px;
+            height: 192px;
+        }
+
+        .haxegon .sub-haxegon .img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 70%;
+            height: 70%;
+            /* object-fit: ; */
+        }
+
+        .profileText h2 {
+            font-size: 1.5em;
+            margin-top: 20px;
+            text-transform: uppercase;
+            text-align: center;
+            font-weight: 600;
+            line-height: 1.4em;
+        }
+
+        .profileText h2>span {
+            text-transform: none;
+            font-size: 0.8em;
+            font-weight: 300;
+        }
+
+        .left_side .information {
+
+            display: flex;
+            flex-direction: column;
+            padding-left: 30px;
+
+        }
+
+        .information .title {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 30px;
+            gap: 10px;
+        }
+
+        .title .hexagonIcon {
+            width: 36px;
+            height: 40px;
+            background-color: #e4e4e6;
+        }
+
+        .subHaxegonIcon {
+            width: 32px;
+            height: 36px;
+            background-color: #0e1d30;
+        }
+
+        .title h3 {
+            font-weight: 300;
+        }
+
+        .title hr {
+            flex: 1;
+        }
+
+        .information .profileContext {
+            margin: 30px 0 30px 0;
+            padding-left: 20px;
+
+        }
+
+        .contact {
+            margin-bottom: 15px;
+        }
+
+        .contactText {
+            margin-top: 5px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .contactText .subHaxegonIcon {
+            background-color: #e4e4e6;
+            color: #0e1d30;
+        }
+
+        .information .box {
+            display: flex;
+            flex-direction: column;
+            padding: 0 8px;
+            margin-top: 20px;
+        }
+
+        .information .boxSkill {
+            position: relative;
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .boxSkill h4 {
+            font-weight: 300;
+            flex-basis: 240px;
+        }
+
+        .boxSkill .percent {
+            position: relative;
+            width: 100%;
+            height: 10px;
+            background-color: #0e1d30;
+            border-radius: 5px;
+            border: 1px solid #e4e4e6;
+        }
+
+        .boxSkill .percent div {
+
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            background: #e4e4e6;
+            border-radius: 5px;
+        }
+
+        .boxSkill .percent .percent-innovation {
+            width: 95%;
+        }
+
+        .boxSkill .percent .percent-creative {
+            width: 75%;
+        }
+
+        .boxSkill .percent .percent-teamwork {
+            width: 60%;
+        }
+
+        .boxSkill .percent .percent-hobbies {
+            width: 90%;
+        }
+
+        .container .right_side {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            background-color: #e4e4e6;
+            color: #0e1d30;
+            padding: 20px 0;
+        }
+
+        .right_side i {
+            color: #0e1d30;
+        }
+
+        .right_side .about {
+            display: flex;
+            flex-direction: column;
+            padding-left: 40px;
+        }
+
+        .right_side .title2 {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .title2 .hexagonIcon {
+            background-color: #0e1d30;
+        }
+
+        .title2 .subHaxegonIcon {
+            background-color: #e4e4e6;
+        }
+
+        .title2 .line {
+            flex: 1;
+            background-color: #0e1d30;
+            height: 2px;
+        }
+
+        .about .experience-text {
+            padding-left: 20px;
+            margin: 30px 0;
+        }
+
+        .about .box2 {
+            display: flex;
+            flex-direction: column;
+            margin-top: 20px;
+            padding: 0 20px 0 20px;
+        }
+
+        .box2 .skillbox {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .box2 h4 {
+            flex-basis: 400px;
+        }
+
+        .skillbox .percent2 {
+            position: relative;
+            width: 100%;
+            height: 10px;
+            background-color: #e4e4e6;
+            border-radius: 5px;
+            border: 1px solid #0e1d30;
+            overflow: hidden;
+        }
+
+        .skillbox .percent2 div {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            height: 100%;
+            background-color: #0e1d30;
+            border-radius: 5px;
+            border: 1px solid #0e1d30;
+            /* transform: translateX(80%);
+    transition: 2s linear; */
+        }
+
+        .skillbox .percent2 .percent-db {
+            width: 80%;
+        }
+
+        .percent2 .percent-bp {
+            width: 90%;
+        }
+
+        .percent2 .percent-oop {
+            width: 75%;
+        }
+
+        .percent2 .percent-web {
+            width: 70%;
+        }
+
+        .percent2 .percent-fp {
+            width: 60%;
+        }
+
+        .right_side .experience-container {
+            display: flex;
+            flex-direction: column;
+            padding: 20px 20px;
+        }
+
+        .experience-container .point {
+            width: 5px;
+            height: 5px;
+            background-color: #0e1d30;
+            border-radius: 50%;
+        }
+
+        .experience-container .labels {
+            display: flex;
+            flex-direction: row;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .experience-container .sub-labels {
+            font-weight: 600;
+        }
+
+        .experience-container .experience-context {
+            padding-left: 17px;
+            margin: 10px 0;
+        }
+
+        .about .box-container {
+            display: flex;
+            flex-direction: row;
+            margin-top: 20px;
+            padding: 0 20px 0 20px;
+        }
+
+        .box-container .box3 {
+            width: 50%;
+        }
+
+        .box-container .box3 .skillbox {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+            padding-right: 20px;
+        }
+
+        .box3 .skillbox h4 {
+            flex-basis: 130px;
+        }
+
+        .percent3 {
+            position: relative;
+            width: 100%;
+            height: 10px;
+            background-color: #e4e4e6;
+            border-radius: 5px;
+            border: 1px solid #0e1d30;
+            flex: 1;
+        }
+
+        .skillbox .percent3 div {
+            position: absolute;
+            top: 0px;
+            left: 0;
+            height: 100%;
+            background-color: #0e1d30;
+            border-radius: 5px;
+            border: 1px solid #0e1d30;
+
+        }
+
+        .percent3 .percent-html {
+            width: 70%;
+        }
+
+        .percent3 .percent-css {
+            width: 75%;
+        }
+
+        .percent3 .percent-js {
+            width: 57%;
+        }
+
+        .percent3 .percent-java {
+            width: 90%;
+        }
+
+        .percent3 .percent-python {
+            width: 40%;
+        }
+
+        .percent3 .percent-sb {
+            width: 90%;
+        }
+
+        .percent3 .percent-servlet {
+            width: 70%;
+        }
+
+        .percent3 .percent-sql {
+            width: 80%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="left_side">
+            <div class="profileText">
+                <div class="haxegon">
+                    <div class="haxegon sub-haxegon">
+                        <img
+                            src="data:image/jpeg;base64,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">
+                    </div>
+                </div>
+                <h2>THANH BINH<br><span>Fresher Backend Developer</span></h2>
+            </div>
+            <div class="information">
+                <div class="title">
+                    <div class="haxegon hexagonIcon">
+                        <div class="haxegon subHaxegonIcon">
+                            <i class="fa-solid fa-file"></i>
+                        </div>
+                    </div>
+                    <h3>PROFILE</h3>
+                    <hr>
+                </div>
+                <p class="profileContext">
+                    I am currently a 3rd year student in the Department of Information Technology at Nong Lam University
+                    in Ho Chi Minh
+                    City.
+                </p>
+                <div class="title contact">
+                    <div class="haxegon hexagonIcon">
+                        <div class="haxegon subHaxegonIcon">
+                            <i class="fa-solid fa-file"></i>
+                        </div>
+                    </div>
+                    <h3>CONTACT</h3>
+                    <hr>
+                </div>
+                <div class="contactText ">
+                    <div class="haxegon subHaxegonIcon">
+                        <i class="fa-solid fa-phone"></i>
+                    </div>
+                    <p>
+                        +84 9013 230 70
+                    </p>
+                </div>
+                <div class="contactText">
+                    <div class="haxegon subHaxegonIcon">
+                        <i class="fa-solid fa-phone"></i>
+                    </div>
+                    <p>
+                        21130291@st.hcmuaf.edu.vn
+                    </p>
+                </div>
+                <div class="contactText">
+                    <div class="haxegon subHaxegonIcon">
+                        <i class="fa-brands fa-github"></i>
+                    </div>
+                    <p>
+                        github.com/ThanhBinh2219
+                    </p>
+                </div>
+                <div class="contactText">
+                    <div class="haxegon subHaxegonIcon">
+                        <i class="fa-solid fa-location-dot"></i>
+                    </div>
+                    <p>
+                        Di An city, Binh Duong , Vietnam
+                    </p>
+                </div>
+                <div class="title">
+                    <div class="haxegon hexagonIcon">
+                        <div class="haxegon subHaxegonIcon">
+                            <i class="fa-solid fa-chart-pie"></i>
+                        </div>
+                    </div>
+                    <h3>PROFESIONAL SKILL</h3>
+                    <hr>
+                </div>
+                <div class="box">
+                    <div class="boxSkill">
+                        <li></li>
+                        <h4>INNOVATION</h4>
+                        <div class="percent">
+                            <div class="percent-innovation"></div>
+                        </div>
+                    </div>
+                    <div class="boxSkill">
+                        <li></li>
+                        <h4>CREATIVE</h4>
+                        <div class="percent">
+                            <div class="percent-creative"></div>
+                        </div>
+                    </div>
+                    <div class="boxSkill">
+                        <li></li>
+                        <h4>TEAM WORK</h4>
+                        <div class="percent">
+                            <div class="percent-teamwork"></div>
+                        </div>
+                    </div>
+                    <div class="boxSkill">
+                        <li></li>
+                        <h4>HOBBIES</h4>
+                        <div class="percent">
+                            <div class="percent-hobbies"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="title contact">
+                    <div class="haxegon hexagonIcon">
+                        <div class="haxegon subHaxegonIcon">
+                            <i class="fa-solid fa-file"></i>
+                        </div>
+                    </div>
+                    <h3>CONNECT</h3>
+                    <hr>
+                </div>
+                <div class="contactText ">
+                    <div class="haxegon subHaxegonIcon">
+                        <i class="fa-brands fa-linkedin-in"></i>
+                    </div>
+                    <p>
+                        linkdn.com/ThanhBinh
+                    </p>
+                </div>
+                <div class="contactText">
+                    <div class="haxegon subHaxegonIcon">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </div>
+                    <p>
+                        facebook.com/BinhPHHT
+                    </p>
+                </div>
+                <div class="contactText">
+                    <div class="haxegon subHaxegonIcon">
+                        <i class="fa-brands fa-square-instagram"></i>
+                    </div>
+                    <p>
+                        binnguci.ht
+                    </p>
+                </div>
+                <div class="contactText">
+                    <div class="haxegon subHaxegonIcon">
+                        <i class="fa-brands fa-telegram"></i>
+                    </div>
+                    <p>
+                        BinhBinh17
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="right_side">
+            <div class="information about">
+                <div class="title title2">
+                    <div class="haxegon hexagonIcon">
+                        <div class="haxegon subHaxegonIcon">
+                            <i class="fa-solid fa-building"></i>
+                        </div>
+                    </div>
+                    <h3>WORK EXPERIENCE</h3>
+                    <div class="line"></div>
+                </div>
+                <p class="experience-text">
+                    Currently, I am a student so I don't have much experience at work, so I am currently striving to
+                    gain more experience in
+                    real work.
+                </p>
+                <div class="title title2">
+                    <div class="haxegon hexagonIcon">
+                        <div class="haxegon subHaxegonIcon">
+                            <i class="fa-solid fa-chart-pie"></i>
+                        </div>
+                    </div>
+                    <h3>PROFESSIONAL SKILL</h3>
+                    <div class="line"></div>
+                </div>
+                <div class="box2">
+                    <div class="skillbox">
+                        <li></li>
+                        <h4>DATABASE MANAGER</h4>
+                        <div class="percent2">
+                            <div class="percent-db"></div>
+                        </div>
+                    </div>
+                    <div class="skillbox">
+                        <li></li>
+                        <h4>BACKEND PROGRAMMING</h4>
+                        <div class="percent2">
+                            <div class="percent-bp"></div>
+                        </div>
+                    </div>
+                    <div class="skillbox">
+                        <li></li>
+                        <h4>OOP PROGRAMMING</h4>
+                        <div class="percent2">
+                            <div class="percent-oop"></div>
+                        </div>
+                    </div>
+                    <div class="skillbox">
+                        <li></li>
+                        <h4>WEB PROGRAMMING</h4>
+                        <div class="percent2">
+                            <div class="percent-web"></div>
+                        </div>
+                    </div>
+                    <div class="skillbox">
+                        <li></li>
+                        <h4>FRONTEND PROGRAMMING</h4>
+                        <div class="percent2">
+                            <div class="percent-fp"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="title title2">
+                    <div class="haxegon hexagonIcon">
+                        <div class="haxegon subHaxegonIcon">
+                            <i class="fa-solid fa-school"></i>
+                        </div>
+                    </div>
+                    <h3>EDUCATION</h3>
+                    <div class="line"></div>
+                </div>
+                <div class="experience-container">
+                    <div class="experience-container-sub">
+                        <div class="labels">
+                            <div class="point">
+                            </div>
+                            <p class="sub-labels">FRESHMAN</p>
+                            <span>/</span>
+                            <span>OCT 2021 - JUN 2022</span>
+                        </div>
+                        <p class="experience-context">I learned about the Java programming language and acquired
+                            knowledge
+                            about mathematics and general subjects at school.</p>
+                    </div>
+                    <div class="experience-container-sub">
+                        <div class="labels">
+                            <div class="point">
+                            </div>
+                            <p class="sub-labels">SOPHOMORE</p>
+                            <span>/</span>
+                            <span>AUG 2022 - JUNE 2023</span>
+                        </div>
+                        <p class="experience-context">In the second year, I learned more advanced knowledge about Java,
+                            could do object-oriented programming, understand
+                            operating system mechanisms, and learn about Linux. Adding logical math subjects helps
+                            improve
+                            logical thinking.</p>
+                    </div>
+                    <div class="experience-container-sub">
+                        <div class="labels">
+                            <div class="point">
+                            </div>
+                            <p class="sub-labels">THIRD-YEAR STUDENT</p>
+                            <span>/</span>
+                            <span>AUG 2023 - JUNE 2024</span>
+                        </div>
+                        <p class="experience-context">At school, I carried out projects on website programming, learned
+                            about computer networks, continued studying subjects
+                            related to AI, and had experience coding backend using servlets. Can write languages like
+                            HTML,
+                            CSS, JavaScript
+                            libraries like ReactJS to code the frontend. Had 4 months implementing a project related to
+                            Android programming</p>
+                    </div>
+                    <div class="experience-container-sub">
+                        <div class="labels">
+                            <div class="point">
+                            </div>
+                            <p class="sub-labels">ORDER KNOWLEDGE</p>
+                        </div>
+                        <p class="experience-context">Currently, I can use JDBC, JPA, Spring Boot, Spring Data JPA of
+                            Spring
+                            Framework library to implement backend projects
+                            in java. Proficient in using MySQL and JDBC to connect data between data and server. Have
+                            knowledge of Restful API</p>
+                    </div>
+                </div>
+                <div class="title title2">
+                    <div class="haxegon hexagonIcon">
+                        <div class="haxegon subHaxegonIcon">
+                            <i class="fa-solid fa-lightbulb"></i>
+                        </div>
+                    </div>
+                    <h3>PROFICIENCY</h3>
+                    <div class="line"></div>
+                </div>
+                <div class="box-container">
+                    <div class="box3">
+                        <div class="skillbox">
+                            <li></li>
+                            <h4>HTML</h4>
+                            <div class="percent3">
+                                <div class="percent-html"></div>
+                            </div>
+                        </div>
+                        <div class="skillbox">
+                            <li></li>
+                            <h4>CSS</h4>
+                            <div class="percent3">
+                                <div class="percent-css"></div>
+                            </div>
+                        </div>
+                        <div class="skillbox">
+                            <li></li>
+                            <h4>JAVASCRIPT</h4>
+                            <div class="percent3">
+                                <div class="percent-js"></div>
+                            </div>
+                        </div>
+                        <div class="skillbox">
+                            <li></li>
+                            <h4>JAVA</h4>
+                            <div class="percent3">
+                                <div class="percent-java"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="box3">
+
+                        <div class="skillbox">
+                            <li></li>
+                            <h4>PYTHON</h4>
+                            <div class="percent3">
+                                <div class="percent-python"></div>
+                            </div>
+                        </div>
+                        <div class="skillbox">
+                            <li></li>
+                            <h4>SPRING BOOT</h4>
+                            <div class="percent3">
+                                <div class="percent-sb"></div>
+                            </div>
+                        </div>
+                        <div class="skillbox">
+                            <li></li>
+                            <h4>SERVLET</h4>
+                            <div class="percent3">
+                                <div class="percent-servlet"></div>
+                            </div>
+                        </div>
+                        <div class="skillbox">
+                            <li></li>
+                            <h4>MySQL</h4>
+                            <div class="percent3">
+                                <div class="percent-sql"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</body>
+
+</html>
