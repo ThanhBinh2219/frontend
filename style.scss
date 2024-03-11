@@ -1,0 +1,385 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+body {
+  background-color: lightblue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  .container {
+    position: relative;
+    width: 100%;
+    max-width: 1000px;
+    min-height: 1000px;
+    margin: 50px;
+    background: #fff;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    box-shadow: 0 35px 55px rgba(0, 0, 0, 1);
+    .haxegon {
+      position: relative;
+      width: 170px;
+      height: 196px;
+      background-color: #fff;
+      color: white;
+      clip-path: polygon(50% 0%, 100% 25%, 100% 75%,
+              50% 100%, 0% 75%, 0% 25%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .sub-haxegon {
+      position: relative;
+      clip-path: polygon(50% 0%, 100% 25%, 100% 75%,
+              50% 100%, 0% 75%, 0% 25%);
+      width: 166px;
+      height: 192px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .subHaxegonIcon {
+      width: 32px;
+      height: 36px;
+      background-color: #0e1d30;
+      color: white;
+      clip-path: polygon(50% 0%, 100% 25%, 100% 75%,
+              50% 100%, 0% 75%, 0% 25%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .hexagonIcon {
+      width: 36px;
+      height: 40px;
+      background-color: #e4e4e6;
+      color: white;
+      clip-path: polygon(50% 0%, 100% 25%, 100% 75%,
+              50% 100%, 0% 75%, 0% 25%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    sub-haxegon .img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 70%;
+      height: 70%;
+      /* object-fit: ; */
+    }
+    .left_side {
+      position: relative;
+      background-color: #0e1d30;
+      color: #e4e4e6;
+      padding: 40px 0;
+      .profile-text {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-bottom: 20px;
+        h2 {
+          font-size: 1.5em;
+          margin-top: 20px;
+          text-transform: uppercase;
+          text-align: center;
+          font-weight: 600;
+          line-height: 1.4em;
+        }
+        span {
+          text-transform: none;
+          font-size: 0.8em;
+          font-weight: 300;
+        }
+      }
+      .information {
+
+        display: flex;
+        flex-direction: column;
+        padding-left: 30px;
+        .title {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          align-items: center;
+          margin-top: 20px;
+          gap: 10px;
+        }
+        h3 {
+          font-weight: 300;
+        }
+        hr {
+          flex: 1;
+        }
+        .profileContext {
+          margin: 30px 0 30px 0;
+          padding-left: 20px;
+
+        }
+        .contact {
+          margin-bottom: 15px;
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          align-items: center;
+          margin-top: 20px;
+          gap: 10px;
+        }
+        .contactText {
+          margin-top: 5px;
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          gap: 20px;
+          .subHaxegonIcon {
+            background-color: #e4e4e6;
+            color: #0e1d30;
+          }
+        }
+        .box {
+          display: flex;
+          flex-direction: column;
+          padding: 0 8px;
+          margin-top: 20px;
+        }
+        .boxSkill {
+          position: relative;
+          width: 100%;
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          align-items: center;
+          margin-bottom: 10px;
+          h4 {
+            font-weight: 300;
+            flex-basis: 240px;
+          }
+          .percent {
+            position: relative;
+            width: 100%;
+            height: 10px;
+            background-color: #0e1d30;
+            border-radius: 5px;
+            border: 1px solid #e4e4e6;
+            div {
+              position: absolute;
+              top: 0;
+              left: 0;
+              height: 100%;
+              background: #e4e4e6;
+              border-radius: 5px;
+            }
+          }
+        }
+        .percent-innovation {
+          width: 95%;
+        }
+        .percent-creative {
+          width: 90%;
+        }
+        .percent-teamwork {
+          width: 60%;
+        }
+        .percent-hobbies {
+          width: 90%;
+        }
+      }
+    }
+    .right_side {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      background-color: #e4e4e6;
+      color: #0e1d30;
+      padding: 20px 0;
+      .about {
+        display: flex;
+        flex-direction: column;
+        padding-left: 40px;
+      }
+      .title2 {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        gap: 10px;
+        margin-top: 20px;
+      }
+      .hexagonIcon {
+        background-color: #0e1d30;
+        width: 36px;
+        height: 40px;
+        color: white;
+        clip-path: polygon(50% 0%, 100% 25%, 100% 75%,
+                50% 100%, 0% 75%, 0% 25%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .subHaxegonIcon {
+        background-color: #e4e4e6;
+        width: 32px;
+        height: 36px;
+        color: #0e1d30;
+        clip-path: polygon(50% 0%, 100% 25%, 100% 75%,
+                50% 100%, 0% 75%, 0% 25%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .line {
+        flex: 1;
+        background-color: #0e1d30;
+        height: 2px;
+      }
+      .experience-text {
+        padding-left: 20px;
+        margin: 30px 0;
+      }
+      .box2 {
+        display: flex;
+        flex-direction: column;
+        margin-top: 20px;
+        padding: 0 20px 0 20px;
+        .skillbox {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          gap: 10px;
+          margin-bottom: 20px;
+        }
+        h4 {
+          flex-basis: 400px;
+        }
+        .percent2 {
+          position: relative;
+          width: 100%;
+          height: 10px;
+          background-color: #e4e4e6;
+          border-radius: 5px;
+          border: 1px solid #0e1d30;
+          overflow: hidden;
+          div {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            height: 100%;
+            background-color: #0e1d30;
+            border-radius: 5px;
+            border: 1px solid #0e1d30;
+            /* transform: translateX(80%);
+            transition: 2s linear; */
+          }
+          .percent-db {
+            width: 80%;
+          }
+          .percent-bp {
+            width: 90%;
+          }
+          .percent-oop {
+            width: 75%;
+          }
+          .percent-web {
+            width: 70%;
+          }
+          .percent-fp {
+            width: 60%;
+          }
+        }
+      }
+      .experience-container {
+        display: flex;
+        flex-direction: column;
+        padding: 20px 20px;
+        .point {
+          width: 5px;
+          height: 5px;
+          background-color: #0e1d30;
+          border-radius: 50%;
+        }
+        .labels {
+          display: flex;
+          flex-direction: row;
+          gap: 10px;
+          align-items: center;
+        }
+        .sub-labels {
+          font-weight: 600;
+        }
+        .experience-context {
+          padding-left: 17px;
+          margin: 10px 0;
+        }
+      }
+      .box-container {
+        display: flex;
+        flex-direction: row;
+        margin-top: 20px;
+        padding: 0 20px 0 20px;
+        .box3 {
+          width: 50%;
+        }
+        .skillbox {
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          align-items: center;
+          gap: 10px;
+          margin-bottom: 10px;
+          padding-right: 20px;
+          h4 {
+            flex-basis: 130px;
+          }
+        }
+      }
+      .percent3 {
+        position: relative;
+        width: 100%;
+        height: 10px;
+        background-color: #e4e4e6;
+        border-radius: 5px;
+        border: 1px solid #0e1d30;
+        flex: 1;
+        div {
+          position: absolute;
+          top: 0px;
+          left: 0;
+          height: 100%;
+          background-color: #0e1d30;
+          border-radius: 5px;
+          border: 1px solid #0e1d30;
+        }
+      }
+      .percent-html {
+        width: 70%;
+      }
+      .percent-css {
+        width: 75%;
+      }
+      .percent-js {
+        width: 57%;
+      }
+      .percent-java {
+        width: 90%;
+      }
+      .percent-python {
+        width: 40%;
+      }
+      .percent-sb {
+        width: 90%;
+      }
+      .percent-servlet {
+        width: 70%;
+      }
+      .percent-sql {
+        width: 80%;
+      }
+    }
+  }
+}
