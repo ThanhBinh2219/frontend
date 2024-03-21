@@ -1,4 +1,4 @@
-const food = ["🐧"]; // tọa biến food để chứa thức ăn
+var food = ["🐧"]; // tọa biến food để chứa thức ăn
 const playBoard = document.querySelector(".content"); // Tạo biến playBoard để lấy dữ liệu từ thẻ có thuộc tính là content
 const scoreElement = document.querySelector(".game-score");
 const highScoreElement = document.querySelector(".high-score");
@@ -6,8 +6,8 @@ const controls = document.querySelectorAll(".controls i");
 
 let gameOver = false;
 let foodX, foodY;
-let snakeX = 20,
-    snakeY = 20;
+let snakeX,
+    snakeY;
 // Tọa độ di chuyển
 let velocityX = 0,
     velocityY = 0;
@@ -25,6 +25,12 @@ highScoreElement.innerText = `High Score: ${highScore}`;
 let draw = false;
 let huong_dau_ran = -90;
 
+const randomSnake = () => {
+    snakeX = Math.floor(Math.random() * 35) + 1;
+    snakeY = Math.floor(Math.random() * 20) + 1;
+};
+
+
 const updateFoodPosition = () => {
     foodX = Math.floor(Math.random() * 35) + 1;
     foodY = Math.floor(Math.random() * 20) + 1;
@@ -35,6 +41,16 @@ const handleGameOver = () => {
     alert("Game Over! Press OK to replay...");
     location.reload();
 };
+
+function snakeBiteSnake() {
+    for (let i = 1; i < snakeBody.length; i++) {
+        for (let j = 1; j < snakeBody.length; j++) {
+            if (snakeBody[i][j] === snakeX && snakeBody[i][j] === snakeY) {
+                return gameOver = true;
+            }
+        }
+    }
+}
 
 // hàm điều hướng cho con rắn
 const rotateSnakeImage = () => {
@@ -85,11 +101,31 @@ controls.forEach((button) =>
         changeDirection({key: button.dataset.key})
     )
 );
+
+const throughWallSnakeX = () => {
+    if (snakeX >= 35) {
+        snakeX = 0;
+    } else if (snakeX < 0) {
+        snakeX = 35;
+    }
+    console.log(snakeX)
+}
+const throughWallSnakeY = () => {
+    if (snakeY >= 20) {
+        snakeY = 0;
+    } else if (snakeY < 0) {
+        snakeY = 20;
+    }
+    console.log(snakeX);
+    console.log(snakeY)
+}
+
+
+// randomSnake();
 /*khởi tạo trò chơi*/
 const initGame = () => {
     //Nếu gameOver = true thì trả hàm handleGameOver để thoát game
     if (gameOver) return handleGameOver();
-
     // tạo một biến html chứa chuỗi rỗng
     let html = "";
     // Nếu tọa độ đầu con rắn trùng với tọa của thức ăn thì con rắn nối thêm một đoạn
@@ -107,6 +143,8 @@ const initGame = () => {
     }
     snakeX += velocityX;
     snakeY += velocityY;
+    // throughWallSnakeX();
+    // throughWallSnakeY();
     for (let i = snakeBody.length - 1; i > 0; i--) {
         snakeBody[i] = snakeBody[i - 1];
     }
@@ -114,29 +152,40 @@ const initGame = () => {
     if (snakeX <= 0 || snakeX > 35 || snakeY <= 0 || snakeY > 20) {
         return (gameOver = true);
     }
-
-    if(draw && velocityX === 0 && velocityY === 0) return
+    if (draw && velocityX === 0 && velocityY === 0) return
     for (let i = 0; i < snakeBody.length; i++) {
         html += `<div class="${i === 0 ? "snake-head" : "snake-body"}" style="grid-area: ${snakeBody[i][1]} / ${
             snakeBody[i][0]}; width:  100%; height: 100%; font-size: 20px; display: flex; justify-content: center; align-items: center; transform: rotate(${huong_dau_ran}deg)">${
             i === 0
                 ? '<img src="/assets/image/headOfSnake.jpg" style="width: 20px; height: 20px;">'
-                : "🟩"
+                : "🔴"
         }</div>`;
     }
     html += `<div class="food" style="grid-area: ${foodY} / ${foodX}">${
-        food[Math.floor(Math.random() * food.length)]
+        // food[Math.floor(Math.random() * food.length)]
+        food
     }</div>`;
 
     playBoard.innerHTML = html;
 
-   draw = true;
+    draw = true;
 };
 const checkWin = () => {
     if (highScore = 200) {
         alert("You win, go to level 2");
     }
 }
+
 updateFoodPosition();
-setIntervalId = setInterval(initGame, 200);
+randomSnake();
+setIntervalId = setInterval(initGame, 100);
 document.addEventListener("keyup", changeDirection);
+
+function openModal() {
+    document.getElementById("overlay").style.display = "block";
+    document.getElementById("modal").style.display = "block";
+}
+function closeModal() {
+    document.getElementById("overlay").style.display = "none";
+    document.getElementById("modal").style.display = "none";
+}

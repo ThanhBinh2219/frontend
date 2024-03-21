@@ -10,7 +10,7 @@
           crossorigin="anonymous" referrerpolicy="no-referrer"/>
     <link rel="stylesheet" href="assets/stylesNake.css"/>
     <script src="assets/scriptSnake.js" type="module" defer></script>
-    <link rel="icon" href="assets/image-removebg-preview.png" type="image/x-icon">
+    <link rel="icon" href="assets/image/image-removebg-preview.png" type="image/x-icon">
     <title>Snake</title>
 </head>
 
@@ -21,8 +21,13 @@
             <span>Snake Game</span>
         </div>
         <div class="menu-choose">
-            <button class="information">Thông tin</button>
-            <button class="instruct">Hướng dẫn</button>
+            <div class="menu">
+                <button class="button" onclick="openModal()">Information</button>
+                <button class="button">Instruct</button>
+            </div>
+            <div class="menu-content">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            </div>
         </div>
     </div>
     <div class="board-game">
@@ -52,8 +57,18 @@
         <i data-key="ArrowRight D" class="fa-solid fa-arrow-right-long"></i>
         <i data-key="ArrowDown S" class="fa-solid fa-arrow-down-long"></i>
     </div>
+    <!-- Overlay -->
+    <div id="overlay"></div>
+    <!-- Modal -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>Thông tin cá nhân</h2>
+            <p>This is a modal window.</p>
+            <button onclick="closeModal()"> Đóng</button>
+        </div>
+    </div>
 </div>
-
 </body>
 
 </html>

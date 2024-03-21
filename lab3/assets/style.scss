@@ -1,0 +1,356 @@
+.row {
+  display: flex;
+  color: #606060;
+  font-family: "Segoe UI";
+  box-sizing: border-box;
+}
+
+.sidebar {
+  flex: 1;
+  font-size: 0.8rem;
+
+  .sidebar__dashboard, .sidebar__analyst, .sidebar__ecommerce {
+    padding: 0.5em;
+    margin: 0.3rem;
+    display: flex;
+    border-radius: 0.5rem;
+    gap: 0.5rem;
+    flex-direction: row;
+
+    &-title {
+      flex: 1;
+      text-align: center;
+    }
+
+    &:hover {
+      background-color: #9e94ff;
+
+      i {
+        color: #fff;
+      }
+    }
+  }
+
+  &__title {
+    margin: 0.7rem 0;
+  }
+
+  &__ui-down {
+    display: flex;
+    flex-direction: row;
+    margin: 0.3rem;
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    justify-content: space-between;
+
+    &:hover {
+      background-color: #9e94ff;
+
+      i {
+        color: #fff;
+      }
+    }
+  }
+
+  &__ui-grid {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+    border-radius: 0.5rem;
+    margin: 0.5rem;
+    padding: 0.5rem;
+
+    &:hover {
+      background-color: #9e94ff;
+
+      i {
+        color: #fff;
+      }
+    }
+  }
+
+}
+
+.notification {
+  display: none;
+}
+
+.content {
+  flex: 6;
+  padding: 0.5rem;
+
+  &__sidebar-top {
+    //background-color: #9e94ff;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 0.5rem;
+    padding: 0.7rem;
+    box-shadow: 0 0.2rem 5px 0.1rem rgba(0, 0, 0, 0.3);
+  }
+
+  &__sidebar-left-list {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+  }
+
+  &__sidebar-right {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  &__sidebar-user {
+    display: flex;
+    align-items: center;
+  }
+
+  &__sidebar-user-name {
+    display: flex;
+    flex-direction: row;
+    gap: 0.2rem;
+  }
+
+  &__checkout {
+    margin: 1rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &-title {
+      border-right: 0.1rem solid #606060;
+      padding-right: 3rem;
+      font-size: 1.5em;
+    }
+
+    &__left {
+      display: inherit;
+      gap: 1rem;
+    }
+  }
+
+  &__process {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: 1.5rem;
+    padding: 0 7em;
+
+    &-one, &-two, &-three {
+      display: inherit;
+      align-items: center;
+      justify-content: center;
+      width: 3rem;
+      height: 3rem;
+      border: 0.1rem solid black;
+      border-radius: 50%;
+    }
+  }
+
+  &__product {
+    display: flex;
+
+    &-image {
+      margin: 1rem;
+    }
+
+    &-detail {
+      display: flex;
+      flex-direction: row;
+      gap: 1rem;
+      margin-top: 1rem;
+      //border: 0.1em solid black;
+      box-shadow: 0 0.2rem 5px 0.1rem rgba(0, 0, 0, 0.3);
+      border-radius: 0.5rem;
+    }
+  }
+
+  &__main__product {
+    flex: 4.5;
+  }
+
+  &__cart {
+    flex: 1.5;
+    margin: 1rem;
+    //border: 1px solid black;
+    border-radius: 0.3em;
+    padding: 1em 1em 0 1em;
+    height: fit-content;
+    box-shadow: 0 0.2rem 5px 0.1rem rgba(0, 0, 0, 0.3);
+    &-options {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+
+    }
+
+    &-apply {
+      text-decoration: none;
+      margin-top: 1em;
+    }
+
+    &-coupon {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: black;
+      margin-top: 1em;
+    }
+
+    &-price-detail {
+      color: black
+    }
+
+    &-price-details {
+      display: flex;
+      color: #606060;
+      margin-top: 1em;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    &-order {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 0.5rem;
+      padding: 0.5em 1em;
+      font-size: 0.9em;
+      color: #fff;
+      border-radius: 0.5em;
+      background-color: #9e94ff;
+    }
+  }
+
+  &__product-description {
+    flex: 2;
+    margin: 1rem 0 1rem 0;
+  }
+
+  &__product-action {
+    flex: 1;
+    border-left: 0.1em solid black;
+    font-size: 0.9em;
+    padding: 0.5em;
+
+    &-list {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 0.7rem;
+    }
+  }
+}
+
+.product {
+  &-image {
+    width: 8em;
+    height: 8em;
+    flex: 1;
+
+  }
+
+  &-name {
+    font-size: 1.3em;
+  }
+
+  &-quantity-id {
+    display: flex;
+    width: 5rem;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 1rem;
+    background-color: #efeeee;
+
+  }
+
+  &-quantity-decrease, &-quantity-number, &-quantity-increase {
+    flex: 1;
+    display: inherit;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &-quantity-decrease, &-quantity-increase {
+    background-color: #7e72f2;
+  }
+
+  &_info {
+    font-size: 0.9rem;
+
+  }
+  &-stock{
+    color: #2ccf9e;
+  }
+
+  &-date {
+    margin-top: 0.5em;
+  }
+
+  &-discount {
+    color: #2ccf9e;
+  }
+
+  &-by {
+    text-decoration: none;
+  }
+
+  &-amount {
+    display: flex;
+    justify-content: end;
+
+    &-start {
+      width: 3rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0.2em;
+      background-color: #9e94ff;
+      color: #fff;
+      border-radius: 0.2em;
+
+    }
+  }
+
+  &-price {
+    color: black;
+  }
+
+  &-free {
+    color: #bcbcbc;
+  }
+
+  &-remove {
+    display: flex;
+    font-size: 0.9em;
+    color: black;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5em;
+    width: 100%;
+    padding: 0.5em 0.2em;
+    border-radius: 0.2em;
+    background-color: #d7d7d7;
+  }
+
+  &-wishlist {
+    display: flex;
+    font-size: 0.9em;
+    color: #fff;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5em;
+    width: 100%;
+    padding: 0.5em 0.2em;
+    border-radius: 0.2em;
+    background-color: #9e94ff;
+  }
+}
+
+
