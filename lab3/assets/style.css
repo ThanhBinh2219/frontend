@@ -152,6 +152,8 @@
   justify-content: space-between;
   font-size: 1.5rem;
   padding: 0 7em;
+  position: relative;
+  align-items: center;
 }
 .content__process-one, .content__process-two, .content__process-three {
   display: inherit;
@@ -166,6 +168,14 @@
   background-color: #7e72f2;
   color: #fff;
   border: none;
+}
+.content__process-step {
+  position: absolute;
+  width: 13rem;
+  height: 0.3rem;
+  left: 0;
+  z-index: -1;
+  background-color: #7e72f2;
 }
 .content__product {
   display: flex;
