@@ -8,6 +8,12 @@
 .sidebar {
   flex: 1;
   font-size: 0.8rem;
+  &_children{
+    display: none;
+  }
+  &__logo {
+    display: none;
+  }
 
   &__dashboard {
     background-color: #dedede;
@@ -84,7 +90,15 @@
 .content {
   flex: 6;
   padding: 0.5rem;
-
+  &__txt{
+    display: none;
+  }
+  &_search{
+    display: none;
+  }
+  &__category{
+    display: none;
+  }
   &__sidebar-top {
     //background-color: #9e94ff;
     display: flex;
@@ -129,11 +143,17 @@
       line-height: 1rem;
       font-size: 10px;
     }
+    .notification_cart{
+      display: none;
+    }
   }
 
   &__sidebar-user {
     display: flex;
     align-items: center;
+    .user {
+      display: none;
+    }
     & img{
       width: 2rem;
       height: 2rem;
@@ -166,6 +186,9 @@
       padding-right: 3rem;
       font-size: 1.5em;
     }
+  }
+  &__shop{
+    display: none;
   }
 
   &__process {
@@ -360,7 +383,9 @@
       background-color: #9e94ff;
       color: #fff;
       border-radius: 0.2em;
-
+      &-l {
+        display: none;
+      }
     }
   }
 
