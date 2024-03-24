@@ -32,6 +32,11 @@ const randomSnake = () => {
 const updateFoodPosition = () => {
   foodX = Math.floor(Math.random() * 35) + 1;
   foodY = Math.floor(Math.random() * 20) + 1;
+  for (let i = 1; i < snakeBody.length; i++) {
+    if (foodX === snakeBody[i][0] && foodY === snakeBody[i][1]) {
+      updateFoodPosition();
+    }
+  }
 };
 // hàm gọi khi game kế thúc và reload lại trang
 const handleGameOver = () => {
